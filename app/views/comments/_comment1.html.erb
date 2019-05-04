@@ -1,0 +1,32 @@
+<div id="comment1-<%= comment1.id %>" class="comment-box">
+		<p>
+		  <strong>User:</strong>
+		  <%= comment1.commenter %>
+		</p>
+		 
+		<p>
+		  <strong>Comment:</strong>
+		  <%= comment1.body %>
+		</p>
+
+		<div id="comment-<%= comment1.id %>-reply-container">
+			<% comment1.replies.each do |reply| %>
+				<%= render 'replies/reply', reply: reply, comment1: comment1 %>
+			<% end %>
+		</div>
+
+
+		<div id="replyform-container">
+		<%= render 'replies/form', comment: comment1, reply: @reply %>
+		</div>
+
+		<div id="any-name-<%= comment1.id %>">
+		    <%= render 'comments/like_dislike', comment1: comment1, article: @article %>
+		  </div>
+
+
+		  <%= link_to 'Delete Comment', [comment1.article, comment1],
+		               method: :delete,
+		               data: { confirm: 'Are you sure?', remote: true } %>
+		</p>
+</div>

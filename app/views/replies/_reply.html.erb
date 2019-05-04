@@ -1,0 +1,11 @@
+<div id="reply-container-<%= reply.id %>" class="reply-box">
+	 <p><strong>Reply</strong>: <%= reply.body %></p>
+
+				 <div id="reply-like-<%= reply.id %>">
+				   <%= render "replies/like_dislike", reply: reply, comment1: comment1 %>
+				  </div>
+
+				  <%= link_to 'Delete reply', "/articles/#{comment1.article_id}/comments/#{reply.comment_id}/replies/#{reply.id}",
+				         method: :delete,
+				         data: { confirm: 'Are you sure?', remote: true } %>
+			</div>

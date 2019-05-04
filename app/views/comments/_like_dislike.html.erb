@@ -1,0 +1,9 @@
+<% if Like.where(comment_id: comment1.id, user_id: current_user.id).any? %>
+
+   <%= link_to 'Unlike', byelike_article_comment_likes_path(article,comment1), remote: true%>
+
+ <% else %>
+     <%= link_to 'Like',  hilike_article_comment_likes_path(article, comment1), remote: true%>
+ <% end %>
+	<p><%= comment1.likes.count %> 
+	<%= (comment1.likes.count) == 0 ? 'like' : 'likes'%></p>

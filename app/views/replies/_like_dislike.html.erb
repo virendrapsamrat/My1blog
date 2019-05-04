@@ -1,0 +1,9 @@
+
+<% if ReplyLike.where(user_id: current_user.id, reply_id: reply.id).any? %>
+
+ <%= link_to 'Unlike', dislike_article_comment_reply_reply_likes_path(comment1.article, comment1,reply), remote: true %>
+<% else %>
+ <%= link_to 'Like', like_article_comment_reply_reply_likes_path(comment1.article, comment1, reply), remote: true %>
+<% end %>
+    <p><%= reply.reply_likes.count %> 
+   <%= (reply.reply_likes.count) == 0 ? 'like' : 'likes'%></p>

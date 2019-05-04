@@ -1,16 +1,5 @@
-
-<p>
-  <strong>User:</strong>
-  <%= comment.commenter %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Delete Comment', [comment.article, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+<div class="article-box">
+	<% @article.comments.each do|comment| %>
+		<%= render 'comments/comment1', comment1:comment %>
+	<% end %>
+</div>

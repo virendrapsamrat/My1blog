@@ -1,0 +1,11 @@
+
+<%= form_for  reply, url: "/articles/#{comment.article.id}/comments/#{comment.id}/replies", remote: true do |form| %>
+  <p>
+    <%= form.label :reply %><br>
+    <%= form.text_field :body %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

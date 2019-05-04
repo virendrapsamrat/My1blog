@@ -1,0 +1,2 @@
+<%# byebug %>
+$("#comment-<%= @comment.id %>-reply-container").append("<%= j render 'replies/reply', reply: @reply ,comment1: @comment %>");
