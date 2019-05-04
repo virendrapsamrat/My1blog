@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :replies, dependent: :destroy
   has_many :reply_likes, dependent: :destroy
+  mount_uploader :image, ImageUploader
 end

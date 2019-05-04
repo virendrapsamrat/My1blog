@@ -1,2 +1,4 @@
 <%# byebug %>
 $("#comment-<%= @comment.id %>-reply-container").append("<%= j render 'replies/reply', reply: @reply ,comment1: @comment %>");
+$("#create-reply-form")[0].reset();
+$("html, body").animate({ scrollTop: $(document).height() }, 1000);

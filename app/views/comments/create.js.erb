@@ -1,1 +1,3 @@
 $(".article-box").append("<%= j render 'comments/comment1', comment1: @comment, reply: @reply %>");
+$("form#create-comment-form")[0].reset();
+$("html, body").animate({ scrollTop: $(document).height() }, 1000);

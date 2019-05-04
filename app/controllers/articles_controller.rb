@@ -1,10 +1,7 @@
 class ArticlesController < ApplicationController
 
-	
-
 	def index
-		# @articles = Article.where(user_id: current_user.id)
-    @articles = Article.all
+    @articles = Article.search(params[:search])
 	end
 
   def new

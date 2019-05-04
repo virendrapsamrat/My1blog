@@ -1,5 +1,5 @@
 
-<%= form_for  reply, url: "/articles/#{comment.article.id}/comments/#{comment.id}/replies", remote: true do |form| %>
+<%= form_for  reply, url: "/articles/#{comment.article.id}/comments/#{comment.id}/replies", remote: true , html: {id:"create-reply-form"} do |form| %>
   <p>
     <%= form.label :reply %><br>
     <%= form.text_field :body %>
