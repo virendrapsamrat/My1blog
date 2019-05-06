@@ -1,3 +1,4 @@
+<h1> Article details </h1>
 <p>
   <strong>Name:</strong>
   <%= @article.title %>
@@ -22,11 +23,35 @@
   <strong>Address:</strong>
   <%= @article.text %>
 </p>
-<h1> Comments </h1>
+<hr/>
+<hr/>
+<h1>Search Comments</h1>
 
-<%# byebug %>
+  <%= form_tag article_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+  <% end %>
+<hr/>
 
-<%= render 'comments/comment' %>
+
+  <h1>Reply Search</h1>
+
+    <%= form_tag article_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :reply_search, params[:reply_search] %>
+        <%= submit_tag "reply_search", :name => nil %>
+      </p>
+    <% end %>
+    <hr/>
+    
+
+<h2> comments </h2>
+ 
+
+
+<%= render 'comments/comment', comments: @comments %>
 
 <%= render 'comments/form' %>
 

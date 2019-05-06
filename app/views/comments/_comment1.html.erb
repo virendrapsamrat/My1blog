@@ -9,11 +9,17 @@
 		  <%= comment1.body %>
 		</p>
 
+
+	
+
 		<div id="comment-<%= comment1.id %>-reply-container">
-			<% comment1.replies.each do |reply| %>
-				<%= render 'replies/reply', reply: reply, comment1: comment1 %>
+			<% comment1.replies.search(params[:reply_search]).each do |reply| %>
+				<%= render 'replies/reply', reply: reply, comment1: comment1, reply1: @reply1 %>
 			<% end %>
 		</div>
+
+		
+
 
 
 		<div id="replyform-container">

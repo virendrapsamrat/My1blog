@@ -3,6 +3,7 @@ class RepliesController < ApplicationController
 
 	def create
 	   @comment = Comment.find(params[:comment_id])
+	   #byebug
 	   @reply = @comment.replies.new(reply_params)
 	   @reply.user_id = current_user.id
 	   @reply.save
@@ -12,6 +13,7 @@ class RepliesController < ApplicationController
 
 	 def destroy
 	 	 @comment = Comment.find(params[:comment_id])
+	 	# byebug
          @reply = Reply.find(params[:id])
          @reply.destroy
         # redirect_to "/articles/#{params[:article_id]}"

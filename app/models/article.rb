@@ -4,10 +4,8 @@ class Article < ApplicationRecord
                     length: { minimum: 5 }
 
     validates :contact_number, presence: true,
-                    length: { :minimum => 10, :maximum => 15 }
-
-   # validates :email, :format => { :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/ }
-    #validates :email, presence: true, :format=> {:With => /\w+@\w+\.{1}[a-zA-Z]{2,}/ }       
+                    length: { :minimum => 10, :maximum => 15 } 
+  
   
 
  def self.search(search)
@@ -17,5 +15,6 @@ class Article < ApplicationRecord
     all
    end
 end
+
 
 end

@@ -3,4 +3,17 @@ class Comment < ApplicationRecord
   has_many :replies, dependent: :destroy
   has_many :likes, dependent: :destroy
 
+
+
+
+  def self.search(search)
+
+    if search
+      return where('commenter LIKE ?', "%#{search}%")
+    else
+      return all
+    end
+   end
+
+
 end

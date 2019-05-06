@@ -1,8 +1,8 @@
 <h1>   Welcome to first Index  </h1>
 <h2> user Profile image </h2>
-<% if current_user.present? %>
-  <%= image_tag(current_user.image.url, size: "100x100", alt: "Edit Entry")%>
-<% end %>
+<%# if current_user.present? %>
+  <%#= image_tag(current_user.image.url, size: "100x100", alt: "Edit Entry")%>
+<%# end %>
 </br>
 <%= link_to 'game', controller: 'articles' %>
 </br>

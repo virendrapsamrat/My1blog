@@ -9,8 +9,11 @@ class ArticlesController < ApplicationController
   end
 
 	def show
-   @article = Article.find(params[:id])
-   @reply = Reply.new
+    @reply = Reply.new
+    @article = Article.find(params[:id])
+    @comments= @article.comments.search(params[:search])
+   # byebug
+    # @reply1= Reply.search(params[:search])
   end
 
 	def edit
